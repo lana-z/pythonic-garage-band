@@ -18,7 +18,7 @@
 
 ### Tests
 #tests not working
-- run `pytest` in test_madlib.py
+- run `pytest` 
 <!-- 
 - How do you run tests?
 - Any tests of note? 
@@ -26,7 +26,4 @@
 
 ### Log
 
-- Wed: file setup, welcome, parse
-- Thurs: corrected file setup, followed along with code review and almost there - will fix after lunch!
-- after lunch, added code for passing tests (test branch)
-- and playing game (game branch)
+- Thurs: setup project, got to 7 passing tests
