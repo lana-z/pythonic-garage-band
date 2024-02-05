@@ -1,8 +1,14 @@
 class Band:
+    
+    """
+    A class for bands
+        name: str
+        members: list
+    """
 
     instance = []
 
-    def __init__(self, name):
+    def __init__(self, name, members=None):
         self.name = name
         self.members = members if members is not None else []
         Band.instance.append(self)
@@ -23,17 +29,27 @@ class Band:
     def to_list(cls):
         return cls.instance
 
+
 class Musician:
+    """
+    A class for musicians
+        name: str
+    """
 
     def __init__(self, name="unknown"):
         self.name = name
 
     def get_instrument(self):
         raise NotImplementedError
-    
 
 
 class Guitarist(Musician):
+
+    """
+    A class for guitarists
+        Inherits from Musician
+    """
+
     def __init__(self, name):
        super().__init__(name)
        self.instrument = "guitar"
@@ -42,7 +58,7 @@ class Guitarist(Musician):
         return f"My name is {self.name} and I play {self.instrument}"
 
     def __repr__(self):
-        return f"[{self.instrument}ist instance. Name = {self.name}"
+        return f"Guitarist instance. Name = {self.name}"
 
     def get_instrument(self):
         return self.instrument
@@ -50,7 +66,14 @@ class Guitarist(Musician):
     def play_solo(self):
         return "face melting guitar solo"
     
+
 class Bassist(Musician):
+
+    """
+    A class for bassists
+        Inherits from Musician
+    """
+
     def __init__(self, name="unknown"):
         self.name = name
         self.instrument = "bass"
@@ -59,7 +82,7 @@ class Bassist(Musician):
         return f"My name is {self.name} and I play {self.instrument}"
  
     def __repr__(self):
-        return f"{self.instrument}ist instance. Name = {self.name}"
+        return f"Bassist instance. Name = {self.name}"
 
     def get_instrument(self):
         return self.instrument
@@ -67,7 +90,14 @@ class Bassist(Musician):
     def play_solo(self):
         return "bom bom buh bom"
 
+
 class Drummer(Musician):
+
+    """
+    A class for drummers
+        Inherits from Musician
+    """
+
     def __init__(self, name="unknown"):
         self.name = name
         self.instrument = "drums"
