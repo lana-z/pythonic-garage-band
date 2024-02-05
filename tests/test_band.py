@@ -148,50 +148,50 @@ def test_to_list():
     assert all_bands[0] == the_nobodies
 
 
-#######################
+######################
 # Fixtures
-#######################
+######################
 
 
-# @pytest.fixture
-# def nirvana_data():
-#     return {
-#         "name": "Nirvana",
-#         "members": [
-#             {"name": "Kurt Cobain", "instrument": "Guitar"},
-#             {"name": "Krist Novoselic", "instrument": "Bass"},
-#             {"name": "Dave Grohl", "instrument": "Drums"},
-#         ],
-#     }
+@pytest.fixture
+def nirvana_data():
+    return {
+        "name": "Nirvana",
+        "members": [
+            {"name": "Kurt Cobain", "instrument": "Guitar"},
+            {"name": "Krist Novoselic", "instrument": "Bass"},
+            {"name": "Dave Grohl", "instrument": "Drums"},
+        ],
+    }
 
 
-# @pytest.fixture
-# def one_band():
-#     members = [
-#         Guitarist("Kurt Cobain"),
-#         Bassist("Krist Novoselic"),
-#         Drummer("Dave Grohl"),
-#     ]
+@pytest.fixture
+def one_band():
+    members = [
+        Guitarist("Kurt Cobain"),
+        Bassist("Krist Novoselic"),
+        Drummer("Dave Grohl"),
+    ]
 
-#     some_band = Band("Nirvana", members)
+    some_band = Band("Nirvana", members)
 
-#     return some_band
-
-
-# @pytest.fixture(autouse=True)
-# def clean():
-#     """runs before each test automatically.
-#     This is necessary because otherwise band instances added in one test
-#     will bleed over to other tests
-#     There's also a more advanced way to run code after each test as well
-#     Check the docs for that. Hint: it uses yield
-#     """
-#     Band.instances = []
+    return some_band
 
 
-#######################
+@pytest.fixture(autouse=True)
+def clean():
+    """runs before each test automatically.
+    This is necessary because otherwise band instances added in one test
+    will bleed over to other tests
+    There's also a more advanced way to run code after each test as well
+    Check the docs for that. Hint: it uses yield
+    """
+    Band.instances = []
+
+
+######################
 # Stretch
-#######################
+######################
 
 
 # @pytest.mark.skip("stretch")

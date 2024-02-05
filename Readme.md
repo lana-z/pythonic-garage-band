@@ -17,13 +17,9 @@
 - `python `
 
 ### Tests
-#tests not working
 - run `pytest` 
-<!-- 
-- How do you run tests?
-- Any tests of note? 
--->
 
 ### Log
 
 - Thurs: setup project, got to 7 passing tests
+- Sun: added docstrings, fixed some code, all but 2 tests passing
